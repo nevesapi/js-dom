@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Hamburger</title>
+  <link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+      list-style: none;
+      border: none;
+      transition: all .3s;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .limitador {
+      width: 100%;
+      max-width: 1200px;
+      padding: .5rem;
+      margin: 0 auto;
+    }
+
+    .header {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: .5rem;
+
+      border: 1px solid #ffffff5f;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 .5rem;
+
+      height: 4rem;
+      position: relative;
+    }
+
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      background: none;
+      font-size: 2.5rem;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .links-menu {
+      display: none;
+
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      right: 0;
+
+      padding: 1rem;
+      border-radius: 0 0 .5rem .5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .links-menu.ativo {
+      display: block;
+    }
+
+    .links-menu li {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      padding: .25rem;
+      border-radius: .25rem;
+
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+
+      position: relative;
+      cursor: pointer;
+    }
+
+    .links-menu li::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      width: 0;
+      background-image: linear-gradient(80deg, #01DBDE, #FC03FF);
+      transition: all .3s ease-in;
+    }
+
+    .links-menu li:hover::before {
+      width: 100%;
+    }
+
+    /* 
+      .links-menu li::after
+      .links-menu li::before 
+    */
+
+    @media screen and (min-width: 800px) {
+      button {
+        display: none;
+      }
+
+      .links-menu {
+        position: initial;
+        display: flex;
+        gap: 1rem;
+        padding: 0;
+        border-radius: .5rem;
+        background-color: initial;
+        backdrop-filter: none;
+      }
+
+      .links-menu li {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="limitador">
+      <div class="header">
+
+        <h1>Logo</h1>
+
+        <nav aria-label="Menu principal">
+          <button type="button" aria-label="Abrir menu da navegação" aria-expanded="false" id="btnMenu">
+
+            <i class="fi fi-rr-menu-burger"></i>
+          </button>
+
+          <ul class="links-menu">
+            <li><i class="fi fi-rr-house-chimney"></i> <span>Home</span></li>
+            <li><i class="fi fi-rr-id-card-clip-alt"></i><span>Sobre</span></li>
+            <li><i class="fi fi-rr-user-add"></i><span>Contato</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </header>
+
+  <script src="menu-hamburger.js"></script>
+</body>
+
+</html>
