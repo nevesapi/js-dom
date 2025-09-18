@@ -22,3 +22,13 @@ btnMenu.addEventListener("click", () => {
     btnMenu.setAttribute("aria-expanded", "false");
   }
 });
+
+// o elemento window representa a janela de visualização
+window.addEventListener("resize", function () {
+  // capturando a largura interna da janela de visualização
+  if (window.innerWidth >= 800) {
+    linksMenu.classList.remove("ativo");
+    btnMenu.setAttribute("aria-label", "Abrir menu da navegação");
+    btnMenu.setAttribute("aria-expanded", "false");
+  }
+});
