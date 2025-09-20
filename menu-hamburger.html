@@ -20,6 +20,7 @@
 
       list-style: none;
       border: none;
+      text-decoration: none;
       transition: all .3s;
     }
 
@@ -102,11 +103,6 @@
       margin-bottom: 1rem;
       padding: .25rem;
       border-radius: .25rem;
-
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-
       position: relative;
       cursor: pointer;
     }
@@ -125,11 +121,18 @@
       width: 100%;
     }
 
-    /* 
-      .links-menu li::after
-      .links-menu li::before 
-    */
+    /* Verifique porque a classe linkAtivo não funciona, estamos inserindo essa classe por meio do JS */
+    .links-menu li.linkAtivo a {
+      font-weight: bold;
+      background-image: linear-gradient(80deg, #01DBDE, #FC03FF);
+    }
 
+    .links-menu li a {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: #ffffff;
+    }
 
     section {
       display: flex;
@@ -208,10 +211,9 @@
           </button>
 
           <ul class="links-menu">
-            <li><i class="fi fi-rr-house-chimney"></i> <span>Home</span></li>
-            <li><i class="fi fi-rr-id-card-clip-alt"></i><span>Sobre</span></li>
-            <li><i class="fi fi-rr-user-add"></i><span>Contato</span>
-            </li>
+            <li> <a href="index.html"><i class="fi fi-rr-house-chimney"></i><span>Home</span></a> </li>
+            <li> <a href="sobre.html"><i class="fi fi-rr-id-card-clip-alt"></i><span>Sobre</span></a> </li>
+            <li> <a href="contato.html"><i class="fi fi-rr-user-add"></i><span>Contato</span></a> </li>
           </ul>
         </nav>
       </div>

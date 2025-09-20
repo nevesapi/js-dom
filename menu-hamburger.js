@@ -32,3 +32,17 @@ window.addEventListener("resize", function () {
     btnMenu.setAttribute("aria-expanded", "false");
   }
 });
+
+const paginaAtual = window.location.pathname.split("/").pop();
+
+const links = document.querySelectorAll(".links-menu a");
+console.log(links);
+
+links.forEach(function (link) {
+  const href = link.getAttribute("href");
+
+  if (href === paginaAtual) {
+    console.log("Página certa");
+    link.classList.add("linkAtivo");
+  }
+});
